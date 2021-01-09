@@ -50,3 +50,7 @@
 	- 🟨 Abstract utility functions
 
 	- 🟥 Use environment variables for credentials and project constants
+	
+	- 🟥 Clean and split styles
+	
+	- 🟨 Finish CRUD implementation
