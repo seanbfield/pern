@@ -1,6 +1,6 @@
 # Environment variables
 
-Create a .env file in the root folder of this project with the following variables:
+Create a .env file in the root folder of this project's API (i.e ./api/.env) with the following variables:
 
 ```
 SERVER_PROTOCOL=http
