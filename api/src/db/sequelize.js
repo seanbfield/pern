@@ -1,7 +1,6 @@
 const { Sequelize } = require('sequelize');
 
-
-const sequelize = new Sequelize('postgres://postgres:Satelite.119922@mailing-list.cpctcrvpppzv.us-east-1.rds.amazonaws.com:5432/postgres') // Example for postgres
+const sequelize = new Sequelize(`postgres://${process.env.PG_USER}:${process.env.PG_PASSWORD}@${process.env.PG_HOST}:${process.env.PG_PORT}/${process.env.PG_NAME}`) // Example for postgres
 
 
 const run = async ()=>{

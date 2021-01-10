@@ -1,14 +1,7 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/default.module.css'
 import { parseCookies } from 'nookies'
-
-export function redirect(ctx, path) {
-  const { res } = ctx;
-  if (res) {
-    res.writeHead(301, { Location: path });
-    res.end();
-  }
-}
+import { redirect } from '../utils'
 
 const Login = (props)=> {
 

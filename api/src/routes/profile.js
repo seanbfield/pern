@@ -2,7 +2,7 @@ const express = require('express');
 const userService = require('../db/services/user')
 
 const jwt = require('jsonwebtoken');
-const JWT_KEY = "something_private_and_long_enough_to_secure"
+const JWT_KEY = process.env.JWT_KEY
 
 const router = express()
 

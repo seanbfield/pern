@@ -1,6 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { setCookie, destroyCookie  } from 'nookies';
 
+
 class MyDocument extends Document {
     static async getInitialProps(ctx) {
         const initialProps = await Document.getInitialProps(ctx)
@@ -10,6 +11,7 @@ class MyDocument extends Document {
                 maxAge: 30 * 24 * 60 * 60,
                 path: '/',
             });
+            
         }
 
         return { ...initialProps }

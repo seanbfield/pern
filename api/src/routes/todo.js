@@ -1,6 +1,6 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const JWT_KEY = "something_private_and_long_enough_to_secure"
+const JWT_KEY = process.env.JWT_KEY;
 const passport = require('passport');
 
 const todoService = require('../db/services/todo');
@@ -38,12 +38,12 @@ router.post('/', async (req, res) =>{
 
 router.put('/:id', async (req, res) =>{
   updatedTodo = await todoService.update(req.params.id, req.body)
-  res.send('updated')
+  res.send({ updated : true, id : req.params.id})
 })
 
 router.delete('/:id', async (req, res) =>{
   deletedTodo = await todoService.delete(req.params.id)
-  res.send('deleted')
+  res.send({ deleted : true, id : req.params.id})
 })
 
 module.exports = router

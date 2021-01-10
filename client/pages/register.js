@@ -1,18 +1,9 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/default.module.css'
 import { parseCookies } from 'nookies'
-
-
-export function redirect(ctx, path) {
-  const { res } = ctx;
-  if (res) {
-    res.writeHead(301, { Location: path });
-    res.end();
-  }
-}
+import { redirect } from '../utils'
 
 const Login = (props)=> {
-
 
   return (
     <div className={styles.container}>
@@ -24,7 +15,6 @@ const Login = (props)=> {
       <main className={styles.main}>
 
       <h1>Welcome to Nextjs OAuth with GitHub and Google</h1>
-
         
             <div>
               <a href={"http://localhost:3001/auth/github"} >Login using Github</a>
@@ -45,9 +35,7 @@ const Login = (props)=> {
   )
 }
 
-
 Login.getInitialProps = (ctx) => {
-
 
   const { authorization } = parseCookies(ctx);
   const {token} = ctx.query

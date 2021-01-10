@@ -4,11 +4,9 @@ const Todo = require('../models/todo');
 module.exports = {
   findAll: async (id) => {
     return Todo.findAll();
-    // return { 'hola' : 'mundo' }
   },
   findById: async (id) => {
     return Todo.findOne({ where : { id: id } });
-    // return { 'hola' : 'mundo' }
   },
   create : async (todo)=>{
     return Todo.create(todo)
